@@ -5,6 +5,9 @@
 class Heap
 {
   public:
+    Heap();
+
+    void Insert(int);
   private:
 }
 

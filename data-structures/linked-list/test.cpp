@@ -14,8 +14,8 @@
 
 int main()
 {
-  LinkedList list;
-  
+  LinkedList<int> list;
+
   for(int i = 0; i < 20; i++)
     list.append(i);
 
