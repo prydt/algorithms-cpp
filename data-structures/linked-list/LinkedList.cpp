@@ -22,7 +22,7 @@ int LinkedList::length()
   return count;
 }
 
-void LinkedList::push(int val)
+void LinkedList::push( int val )
 {
   Node* newNode = new Node();
   newNode->data = val;
@@ -30,7 +30,7 @@ void LinkedList::push(int val)
   head = newNode;
 }
 
-void LinkedList::append(int val)
+void LinkedList::append( int val )
 {
   Node* current = head;
   Node* newNode = new Node();
@@ -49,17 +49,26 @@ void LinkedList::append(int val)
   }
 }
 
-int LinkedList::remove()
+int LinkedList::removeHead()
 {
-  head = head->next;
+  int out = head->data;
+  head = head->next; // simply sets head to the next node in the list
+
+  return out;
 }
 
-int LinkedList::remove(int index)
+int LinkedList::removeTail()
 {
   Node* tmp = head;
+  int out;
+
   while(tmp->next->next != nullptr)
     tmp = tmp->next;
+  
+  out = tmp->next->data;
   tmp->next = nullptr;
+
+  return out;
 }
 
 void LinkedList::print()
@@ -72,4 +81,18 @@ void LinkedList::print()
     tmp = tmp->next;
   }
   std::cout << "]\n";
+}
+
+int& LinkedList::operator[]( std::size_t index )
+{
+  Node* tmp = head;   // temp variable to store the head pointer
+  int i = 0;          // iterator 
+
+  while( tmp->next != nullptr && i < (int) index )
+  {
+    tmp = tmp->next;
+    i++;
+  }
+
+  return tmp->data;
 }

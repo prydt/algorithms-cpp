@@ -24,13 +24,17 @@ class LinkedList
     void append(int);
 
     // removes from head
-    int remove();
+    int removeHead();
 
-    // removes Nth item
-    int remove(int);
+    // removes last item
+    int removeTail();
 
     // prints out list
     void print();
+
+    // gets items in at the specified index
+    int& operator[](std::size_t);
+
 
   private:
     // building block of the list...
