@@ -6,6 +6,7 @@
 
 /*
  * A Linked List Class (Now w/ Templates!)
+ *  - fixed ALL memory leaks [Valgrind tested]
  *
  */
 template <class T>
@@ -18,20 +19,19 @@ class LinkedList
       Node* ptr = new Node();
       ptr->next = nullptr;
       head = ptr;
+      count = 1;
+    }
+
+    // destructor
+    ~LinkedList()
+    {
+      while(length() != 0)
+        removeHead();
     }
 
     // returns length of list
     int length()
     {
-      Node* tmp = head;
-      int count = 0;
-
-      while(tmp->next != nullptr)
-      {
-        tmp = tmp->next;
-        count++;
-      }
-
       return count;
     }
 
@@ -42,6 +42,7 @@ class LinkedList
       newNode->data = val;
       newNode->next = head;
       head = newNode;
+      count++;
     }
 
     // adds nodes to tail
@@ -62,14 +63,19 @@ class LinkedList
 
         current->next = newNode;
       }
+      count++;
     }
 
     // removes from head
     T removeHead()
     {
+      Node* tmp = head;
       int out = head->data;
       head = head->next; // simply sets head to the next node in the list
 
+      delete tmp;
+
+      count--;
       return out;
     }
 
@@ -83,8 +89,10 @@ class LinkedList
         tmp = tmp->next;
 
       out = tmp->next->data;
+      delete tmp->next;
       tmp->next = nullptr;
 
+      count--;
       return out;
     }
 
@@ -129,5 +137,8 @@ class LinkedList
 
     // head pointer of the list
     Node* head;
+
+    // length
+    int count;
 };
 #endif
