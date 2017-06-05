@@ -1,17 +1,11 @@
 #include "Heap.h"
 #include <iostream>
 
-Heap::Heap()
-{
-}
+Heap::Heap() {}
 
-int Heap::peek()
-{
-  return items.at(0);
-}
+int Heap::peek() { return items.at(0); }
 
-int Heap::extractMin()
-{
+int Heap::extractMin() {
   int out = items.at(0);
   items[0] = items.at(items.size() - 1);
 
@@ -21,45 +15,36 @@ int Heap::extractMin()
   return out;
 }
 
-void Heap::insert(int item)
-{
+void Heap::insert(int item) {
   items.push_back(item);
   heapifyUp();
 }
 
-void Heap::heapifyUp()
-{
+void Heap::heapifyUp() {
   // sets index to last node
   int index = items.size() - 1;
-  
+
   // repeats while the node has a parent
   // and is out of order
-  while(hasParent(index) && parent(index) > items.at(index))
-  {
+  while (hasParent(index) && parent(index) > items.at(index)) {
     swap(getParentIndex(index), index);
     index = getParentIndex(index);
   }
 }
 
-void Heap::heapifyDown()
-{
+void Heap::heapifyDown() {
   // start at root
   int index = 0;
 
-  while(hasLeftChild(index))
-  {
+  while (hasLeftChild(index)) {
     int smallIndex = getLeftChildIndex(index);
-    if(hasRightChild(index) && rightChild(index) < leftChild(index))
-    {
+    if (hasRightChild(index) && rightChild(index) < leftChild(index)) {
       smallIndex = getRightChildIndex(index);
     }
 
-    if(items.at(index) < items[smallIndex])
-    {
+    if (items.at(index) < items[smallIndex]) {
       break;
-    }
-    else
-    {
+    } else {
       swap(index, smallIndex);
     }
 
@@ -67,10 +52,8 @@ void Heap::heapifyDown()
   }
 }
 
-void Heap::print()
-{
+void Heap::print() {
   std::cout << "[ ";
-  for(int i = 0; i < (int)items.size(); i++)
-    std::cout << ' ' << items.at(i);
+  for (int i = 0; i < (int)items.size(); i++) std::cout << ' ' << items.at(i);
   std::cout << " ]\n";
 }

@@ -13,6 +13,7 @@ The key of a node is less than or equal to the keys of its children.
 The opposite of the Min-Heap Property.
 
 ## Heap Operations
+ - insert - insert item into heap
+ - remove - remove item from heap
  - buildMinHeap: make a Min-Heap from an array (Constructor)
  - minHeapify: correct a single violation of the Heap property in a subtree's root
-
