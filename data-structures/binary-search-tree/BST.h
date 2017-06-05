@@ -2,14 +2,13 @@
 #ifndef BST_H
 #define BST_H
 
-#include <cstdlib>
 #include <iostream>
 
 template <class T>
 class BinarySearchTree {
  public:
   // constructor
-  BinarySearchTree() { root = NULL; }
+  BinarySearchTree() { root = nullptr; }
   ~BinarySearchTree()
   {
     destroy(root);
@@ -39,12 +38,6 @@ class BinarySearchTree {
     std::cout << " ]\n";
   }
 
-  // prints tree in ascii "graphics"
-  void displayTree()
-  {
-    displayTree(root, 0);
-  }
-
  private:
   // basic building block of tree
   struct Node {
@@ -56,7 +49,7 @@ class BinarySearchTree {
 
   void destroy(Node *n)
   {
-    if(n == NULL)
+    if(n == nullptr)
       return;
 
     destroy(n->left);
@@ -68,13 +61,13 @@ class BinarySearchTree {
   // helper function print
   void print(Node *ptr)
   {
-    if (root != NULL) {
-      if (ptr->left != NULL) {
+    if (root != nullptr) {
+      if (ptr->left != nullptr) {
         print(ptr->left);
       }
       std::cout << ptr->key << " ";
 
-      if (ptr->right != NULL) {
+      if (ptr->right != nullptr) {
         print(ptr->right);
       }
     }
@@ -89,43 +82,24 @@ class BinarySearchTree {
     if(data == n->key)
       return true;
 
-    if(data > n->key && n->right != NULL)
+    if(data > n->key && n->right != nullptr)
       return find(data, n->right);
 
-    if(data < n->key && n->left != NULL)
+    if(data < n->key && n->left != nullptr)
       return find(data, n->left);
 
     return false;
   }
 
-  // internals for display tree function
-  void displayTree(Node *node, int ind)
-  {
-    if(node == NULL) return;
-
-    std::cout << '\n';
-
-    displayTree(node->right, ind + 1);
-
-    for(int i = 0; i < ind; i++)
-    {
-      std::cout << " ";
-    }
-
-    std::cout << '[' << node->key << "]\n";
-
-    displayTree(node->left, ind + 1);
-  }
-
   // find min
   int findMin(Node *ptr)
   {
-    if (root == NULL) {
+    if (root == nullptr) {
       std::cout << "findMin(): BST is empty\n";
       return -324243;
     }
     else {
-      if (ptr->left != NULL) {
+      if (ptr->left != nullptr) {
         return findMin(ptr->left);
       }
       else {
@@ -140,20 +114,20 @@ class BinarySearchTree {
     Node *n = new Node();
     n->key = data;
 
-    n->left = NULL;
-    n->right = NULL;
+    n->left = nullptr;
+    n->right = nullptr;
 
     return n;
   }
 
   void insert(T data, Node *ptr)
   {
-    if (root == NULL) {
+    if (root == nullptr) {
       root = createLeaf(data);
       return;
     }
     else if (data < ptr->key) {
-      if (ptr->left != NULL)
+      if (ptr->left != nullptr)
         insert(data, ptr->left);
       else {
         ptr->left = createLeaf(data);
@@ -161,7 +135,7 @@ class BinarySearchTree {
       }
     }
     else if (data > ptr->key) {
-      if (ptr->right != NULL)
+      if (ptr->right != nullptr)
         insert(data, ptr->right);
       else {
         ptr->right = createLeaf(data);
@@ -176,25 +150,25 @@ class BinarySearchTree {
   // remove match
   void removeMatch(Node *parent, Node *match, bool left)
   {
-    if (root != NULL) {
+    if (root != nullptr) {
       Node *delptr;
       int small;
 
       // case A: 0 children
-      if (match->left == NULL && match->right == NULL) {
+      if (match->left == nullptr && match->right == nullptr) {
         delptr = match;
 
-        left ? parent->left = NULL : parent->right = NULL;
+        left ? parent->left = nullptr : parent->right = nullptr;
 
         delete delptr;
       }
 
       // case B: 1 child
-      else if ((match->left == NULL) != (match->right == NULL)) {
-        (left) ? ((match->right != NULL) ? parent->left = parent->right : parent->left = parent->left)
-          : (match->right != NULL ? parent->right = match->right : parent->right = match->left);
+      else if ((match->left == nullptr) != (match->right == nullptr)) {
+        (left) ? ((match->right != nullptr) ? parent->left = parent->right : parent->left = parent->left)
+          : (match->right != nullptr ? parent->right = match->right : parent->right = match->left);
 
-        (match->right != NULL) ? match->right = NULL : match->left = NULL;
+        (match->right != nullptr) ? match->right = nullptr : match->left = nullptr;
 
         delptr = match;
 
@@ -218,7 +192,7 @@ class BinarySearchTree {
   // removes root of tree (used in special cases)
   void removeRootMatch()
   {
-    if (root == NULL) {
+    if (root == nullptr) {
       std::cout << "removeRootMatch(): BST is empty\n";
       return;
     }
@@ -227,16 +201,16 @@ class BinarySearchTree {
     int small;
 
     // case A: 0 children
-    if (root->left == NULL && root->right == NULL) {
-      root = NULL;
+    if (root->left == nullptr && root->right == nullptr) {
+      root = nullptr;
       delete delptr;
     }
 
     // case B: 1 child
-    else if ((root->left == NULL) != (root->right == NULL)) {
-      root = (root->left != NULL) ? root->left : root->right;
+    else if ((root->left == nullptr) != (root->right == nullptr)) {
+      root = (root->left != nullptr) ? root->left : root->right;
 
-      (root->right != NULL) ? delptr->right = NULL : delptr->left = NULL;
+      (root->right != nullptr) ? delptr->right = nullptr : delptr->left = nullptr;
       delete delptr;
     }
 
@@ -252,7 +226,7 @@ class BinarySearchTree {
 
   void remove(T data, Node *parent)
   {
-    if (root == NULL) {
+    if (root == nullptr) {
       std::cout << "remove(): FAILED, BST is empty\n";
     }
     else {
@@ -260,11 +234,11 @@ class BinarySearchTree {
         removeRootMatch();
       }
       else {
-        if (data < parent->key && parent->left != NULL) {
+        if (data < parent->key && parent->left != nullptr) {
           parent->left->key == data ? removeMatch(parent, parent->left, true)
                                     : remove(data, parent->left);
         }
-        else if (data > parent->key && parent->right != NULL) {
+        else if (data > parent->key && parent->right != nullptr) {
           parent->right->key == data ? removeMatch(parent, parent->right, false)
                                      : remove(data, parent->right);
         }
