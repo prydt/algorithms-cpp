@@ -20,6 +20,13 @@ class BinarySearchTree {
   // remove node
   void remove(T data) { remove(data, root); }
 
+
+  // check if a number is in tree
+  bool find(T data)
+  {
+    return find(data, root);
+  }
+
   // print tree in order out to stdout
   void printTree()
   {
@@ -59,6 +66,21 @@ class BinarySearchTree {
     else {
       std::cout << "Binary Search Tree is empty\n";
     }
+  }
+
+  // internals for find function
+  bool find(T data, Node *n)
+  {
+    if(data == n->key)
+      return true;
+
+    if(data > n->key && n->right != NULL)
+      return find(data, n->right);
+
+    if(data < n->key && n->left != NULL)
+      return find(data, n->left);
+
+    return false;
   }
 
   // internals for display tree function

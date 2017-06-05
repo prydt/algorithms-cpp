@@ -1,0 +1,9 @@
+Smallest: 122
+[ 122 228 300 373 540 776 811 814 818 929  ]
+
+-----------------
+
+Before:	[ 0 1 2 3 4 5 6 7 8 9  ]
+is one in the bst? yes
+After:	[ 2 3 4 5 6 7 8 9  ]
+is one in the bst? no

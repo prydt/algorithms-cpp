@@ -19,7 +19,7 @@ int main()
   std::cout << "Smallest: " << bst.findMin() << '\n';
   bst.printTree();
 
-  std::cout << "-----------------\n";
+  std::cout << "\n-----------------\n\n";
 
   intBST rbst;
 
@@ -31,12 +31,15 @@ int main()
   std::cout << "Before:\t";
   rbst.printTree();
 
+  std::cout << "is one in the bst? " << (rbst.find(1) ? "yes" : "no") << '\n';
 
   rbst.remove(0);
   rbst.remove(1);
 
   std::cout << "After:\t";
   rbst.printTree();
+
+  std::cout << "is one in the bst? " << (rbst.find(1) ? "yes" : "no") << '\n';
 
   return 0;
 }
