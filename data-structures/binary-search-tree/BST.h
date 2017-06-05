@@ -10,6 +10,10 @@ class BinarySearchTree {
  public:
   // constructor
   BinarySearchTree() { root = NULL; }
+  ~BinarySearchTree()
+  {
+    destroy(root);
+  }
 
   // insert
   void insert(T data) { insert(data, root); }
@@ -49,6 +53,17 @@ class BinarySearchTree {
     Node *left;   // smaller
     Node *right;  // greater
   };
+
+  void destroy(Node *n)
+  {
+    if(n == NULL)
+      return;
+
+    destroy(n->left);
+    destroy(n->right);
+
+    delete n;
+  }
 
   // helper function print
   void print(Node *ptr)
