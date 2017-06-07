@@ -1,0 +1,7 @@
+[
+  pear	:	4
+  mango	:	2
+  peach	:	5
+  grape	:	3
+  apple	:	1
+]
