@@ -18,13 +18,13 @@ int main()
   for(int i = 0; i < 20; i++)
     test[i] = rng() % 300;
 
-  std::cout << "Before Sorting: ";
+  std::cout << "Before Sorting:\t";
   printArray(test, 20);
 
   // sort
   countingSort(test, 20, 300);
 
-  std::cout << "After Sorting: ";
+  std::cout << "After Sorting:\t";
   printArray(test, 20);
 
   return 0;
