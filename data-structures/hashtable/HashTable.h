@@ -76,10 +76,11 @@ class HashTable  // AKA Symbol Table or HashMap or Dictionary
     {
       if (!table[i].empty())
       {
-        for (auto it = table[i].begin(); it != table[i].end(); ++it)
+        for (auto it = table[i].begin();
+            it != table[i].end(); ++it)
         {
-          std::cout << '\t' << std::get<0>(*it) << "\t:\t" << std::get<1>(*it)
-                    << '\n';
+          std::cout << '\t' << std::get<0>(*it)
+            << "\t:\t" << std::get<1>(*it) << '\n';
         }
       }
     }

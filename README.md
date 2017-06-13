@@ -1,2 +1,2 @@
 # a-study-in-algorithms
-A Study In Algorithms by PryDt
+My journey into the vast lands of Data Structures and Algorithms documented.
