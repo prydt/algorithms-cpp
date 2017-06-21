@@ -1,0 +1,3 @@
+String: i rlly like cats m8
+Substr: cats
+Index of cats: 12
