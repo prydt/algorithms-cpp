@@ -1,0 +1,27 @@
+1.Insert
+2.Display
+3.Exit
+
+1
+Enter data: 3
+1.Insert
+2.Display
+3.Exit
+
+1
+Enter data: 7
+1.Insert
+2.Display
+3.Exit
+
+1
+Enter data: 9
+1.Insert
+2.Display
+3.Exit
+
+2
+9 7 3
+1.Insert
+2.Display
+3.Exit
