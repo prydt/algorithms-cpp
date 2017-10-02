@@ -1,6 +1,8 @@
 # Algorithms-cpp
 > This repository is just a reference for C++ Data Structures and Algorithms.
+
 Data Structure is a systematic way to organize data in order to use it efficiently. Following terms are the foundation terms of a data structure. 
+
 Algorithm is a step-by-step procedure, which defines a set of instructions to be executed in a certain order to get the desired output. Algorithms are generally created independent of underlying languages, i.e. an algorithm can be implemented in more than one programming language.
 
 ## Algorithms Implemented Here
