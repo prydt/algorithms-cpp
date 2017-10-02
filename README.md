@@ -1,6 +1,5 @@
 # Algorithms-cpp
-> This repository is a documentation into my journey into the vast lands of Data Structures and Algorithms documented.
-> ~ PryDt
+> This repository is just a reference for C++ Data Structures and Algoriths
 
 ## Algorithms Implemented Here
  - sorting algorithms
