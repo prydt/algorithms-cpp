@@ -3,6 +3,10 @@
 
 ## Algorithms Implemented Here
  - sorting algorithms
+    - [Bellman Ford](https://github.com/PryDt/algorithms-cpp/tree/master/algorithms/BellmanFord)
+    - [Bubble sort](https://github.com/PryDt/algorithms-cpp/tree/master/algorithms/bubble-sort)
+    - [Heap sort](https://github.com/PryDt/algorithms-cpp/tree/master/algorithms/heap-sort)
+    - [Quick sort](https://github.com/PryDt/algorithms-cpp/tree/master/algorithms/quick-sort)
     - [insertion sort](https://github.com/PryDt/algorithms-cpp/tree/master/algorithms/insertion-sort)
     - [counting sort](https://github.com/PryDt/algorithms-cpp/tree/master/algorithms/counting-sort)
     - [radix sort](https://github.com/PryDt/algorithms-cpp/tree/master/algorithms/radix-sort)
