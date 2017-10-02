@@ -1,3 +1,7 @@
+// Notes
+// 1) Negative weights are found in various applications of graphs.
+
+// 2) Bellman-Ford works better (better than Dijksra’s) for distributed systems. Unlike Dijksra’s where we need to find minimum value of all vertices, in Bellman-Ford, edges are considered one by one.
 #include <bits/stdc++.h>
 using namespace std;
 int nodes,edges;
