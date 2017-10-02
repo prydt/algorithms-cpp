@@ -1,0 +1,48 @@
+1.Insert
+2.Delete
+3.Display
+4.Check for loop
+5.Exit
+
+1
+Enter data and position: 4 2
+1.Insert
+2.Delete
+3.Display
+4.Check for loop
+5.Exit
+
+1
+Enter data and position: 2 1
+1.Insert
+2.Delete
+3.Display
+4.Check for loop
+5.Exit
+
+1
+Enter data and position: 8 3
+1.Insert
+2.Delete
+3.Display
+4.Check for loop
+5.Exit
+
+1
+Enter data and position: 3 7
+Invalid Position Number
+1.Insert
+2.Delete
+3.Display
+4.Check for loop
+5.Exit
+
+3
+2 4 8 2 4 8 2 4 8 2 4 8 2 4 8 2 4 8 2 4 8 2 4 8 2 4 8 2 4 8 2 4 8 2 4 8 2 4 8 2 4 8 2 4 8 2 4 8 2 4
+1.Insert
+2.Delete
+3.Display
+4.Check for loop
+5.Exit
+
+5
